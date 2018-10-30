@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Detect OS
 # Currently, I'm only using MacOS, Ubuntu and CentOS
