@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Globals
+ASWATHKK_DOTFILES=`pwd`
+
 # Detect OS
 # Currently, I'm only using MacOS, Ubuntu and CentOS
 function is_osx() {
@@ -51,5 +54,5 @@ install zsh
 install tmux
 
 # Install oh-my-zsh
-git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
-cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
+git clone https://github.com/robbyrussell/oh-my-zsh.git $ASWATHKK_DOTFILES/.oh-my-zsh
+cp $ASWATHKK_DOTFILES/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
