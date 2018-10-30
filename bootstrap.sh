@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Globals
-ASWATHKK_DOTFILES=`pwd`
+ASWATHKK_DOTFILES=$(dirname "$0")
 
 # Detect OS
 # Currently, I'm only using MacOS, Ubuntu and CentOS
