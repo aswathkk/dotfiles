@@ -1,3 +1,0 @@
-export ASWATHKK_DOTFILES=(dirname "$0")
-
-source zsh/.zshrc

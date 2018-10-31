@@ -52,7 +52,13 @@ function install() {
 install git
 install zsh
 install tmux
+install neovim
 
 # Install oh-my-zsh
 git clone https://github.com/robbyrussell/oh-my-zsh.git $ASWATHKK_DOTFILES/.oh-my-zsh
 cp $ASWATHKK_DOTFILES/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
+
+# Install Vim-Plug
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
