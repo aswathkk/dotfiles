@@ -42,7 +42,11 @@ function install() {
 
     if ! type "$1" > /dev/null 2>&1; then
         echo "Installing $1"
-        $PACKMAN -y install $1
+        if [[ $PACKMAN == "brew" ]]; then
+            brew install $1
+        else
+            $PACKMAN -y install $1
+        fi
     else
         echo "$1 already Installed"
     fi
