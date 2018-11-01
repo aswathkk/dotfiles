@@ -39,7 +39,7 @@ function get_packman() {
 # Install specified package
 function install() {
     PACKMAN=$(get_packman)
-    
+
     if ! type "$1" > /dev/null 2>&1; then
         echo "Installing $1"
         $PACKMAN -y install $1
@@ -56,7 +56,6 @@ install neovim
 
 # Install oh-my-zsh
 git clone https://github.com/robbyrussell/oh-my-zsh.git $ASWATHKK_DOTFILES/.oh-my-zsh
-cp $ASWATHKK_DOTFILES/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
 
 # Install Vim-Plug
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
