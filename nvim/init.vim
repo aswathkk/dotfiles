@@ -23,6 +23,11 @@ let g:oceanic_next_terminal_bold = 1
 let g:oceanic_next_terminal_italic = 1
 colorscheme OceanicNext
 
+" mappings
+let mapleader=','
+
+nnoremap <Leader>nn : NERDTreeToggle<cr>
+
 " indentLine
 let g:indentLine_char = '┊'
 
