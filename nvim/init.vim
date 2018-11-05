@@ -1,5 +1,6 @@
 call plug#begin('~/.local/share/nvim/plugged')
 Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdcommenter'
 Plug 'mhartington/oceanic-next'
 Plug 'vim-airline/vim-airline'
 Plug 'Yggdroot/indentLine'
@@ -34,4 +35,7 @@ let g:indentLine_char = '┊'
 " vim-airline
 let g:airline_theme='oceanicnext'
 let g:airline_powerline_fonts = 1
+
+" nerdcommenter
+let g:NERDSpaceDelims = 1
 
