@@ -1,8 +1,10 @@
 call plug#begin('~/.local/share/nvim/plugged')
+Plug 'lambdalisue/vim-manpager'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 Plug 'mhartington/oceanic-next'
 Plug 'vim-airline/vim-airline'
+Plug 'w0rp/ale'
 Plug 'Yggdroot/indentLine'
 call plug#end()
 
