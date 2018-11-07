@@ -3,10 +3,19 @@ export ZSH=$ASWATHKK_DOTFILES/.oh-my-zsh
 export EDITOR=nvim
 export MANPAGER="nvim -c MANPAGER -"
 export XDG_CONFIG_HOME=$ASWATHKK_DOTFILES
+export TERM=xterm-256color
 
-ZSH_THEME="simple"
+# Golang
+export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:$HOME/go/bin
+export GOPATH=$HOME/go
 
-plugins=(git)
+ZSH_THEME="gnzh"
+
+plugins=(
+    git
+    docker
+)
 
 source $ZSH/oh-my-zsh.sh
 
