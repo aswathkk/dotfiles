@@ -33,6 +33,8 @@ let mapleader=','
 nnoremap <Leader>nn : NERDTreeToggle<cr>
 nnoremap <C-N> :bnext<CR>
 nnoremap <C-P> :bprev<CR>
+nnoremap <C-D> :bd<CR>
+nnoremap <C-S> :w<CR>
 
 " indentLine
 let g:indentLine_char = '┊'
