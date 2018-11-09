@@ -36,6 +36,13 @@ nnoremap <C-P> :bprev<CR>
 nnoremap <C-D> :bd<CR>
 nnoremap <C-S> :w<CR>
 
+" Autocompletion of (, {, [, ' and "
+inoremap ( ()<esc>i
+inoremap { {}<esc>i
+inoremap [ []<esc>i
+inoremap ' ''<esc>i
+inoremap " ""<esc>i
+
 " indentLine
 let g:indentLine_char = '┊'
 
