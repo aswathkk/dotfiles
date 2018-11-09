@@ -1,6 +1,7 @@
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export ZSH=$ASWATHKK_DOTFILES/.oh-my-zsh
 export EDITOR=nvim
+export GIT_EDITOR=nvim
 export MANPAGER="nvim -c MANPAGER -"
 export XDG_CONFIG_HOME=$ASWATHKK_DOTFILES
 export TERM=xterm-256color
