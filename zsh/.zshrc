@@ -20,5 +20,5 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-alias tmux='tmux -f "$XDG_CONFIG_HOME"/tmux/.tmux.conf'
+alias tmux='tmux -u -f "$XDG_CONFIG_HOME"/tmux/.tmux.conf'
 
