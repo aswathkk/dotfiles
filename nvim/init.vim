@@ -37,9 +37,13 @@ let mapleader=','
 
 nnoremap <Leader>nn : NERDTreeToggle<cr>
 nnoremap <C-N> :bnext<CR>
+inoremap <C-N> <esc>:bnext<CR>
 nnoremap <C-P> :bprev<CR>
+inoremap <C-P> <esc>:bprev<CR>
 nnoremap <C-D> :bd<CR>
+inoremap <C-D> <esc>:bd<CR>
 nnoremap <C-S> :w<CR>
+inoremap <C-S> <esc>:w<CR>
 
 " Ctrl + C to xclip
 vnoremap <C-c> "+y
