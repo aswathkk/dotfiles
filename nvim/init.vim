@@ -3,10 +3,11 @@ Plug 'airblade/vim-gitgutter'
 Plug 'lambdalisue/vim-manpager'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
-Plug 'mhartington/oceanic-next'
 Plug 'vim-airline/vim-airline'
 Plug 'w0rp/ale'
 Plug 'Yggdroot/indentLine'
+Plug 'joshdick/onedark.vim'
+Plug 'sheerun/vim-polyglot'
 call plug#end()
 
 " general settings
@@ -24,9 +25,12 @@ set cursorline
 set termguicolors
 set hidden
 syntax enable
-let g:oceanic_next_terminal_bold = 1
-let g:oceanic_next_terminal_italic = 1
-colorscheme OceanicNext
+
+" onedark colorscheme
+colorscheme onedark
+let g:onedark_terminal_italics=1
+let g:onedark_termcolors=256
+let g:onedark_hide_endofbuffer=0
 
 " mappings
 let mapleader=','
@@ -48,7 +52,7 @@ inoremap " ""<esc>i
 let g:indentLine_char = '┊'
 
 " vim-airline
-let g:airline_theme='oceanicnext'
+let g:airline_theme='onedark'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 
