@@ -1,4 +1,5 @@
 call plug#begin('~/.local/share/nvim/plugged')
+Plug 'airblade/vim-gitgutter'
 Plug 'lambdalisue/vim-manpager'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
@@ -53,4 +54,12 @@ let g:airline#extensions#tabline#enabled = 1
 
 " nerdcommenter
 let g:NERDSpaceDelims = 1
+
+" gitgutter
+let g:gitgutter_override_sign_column_highlight = 0
+let g:gitgutter_sign_added                     = '+'
+let g:gitgutter_sign_modified                  = '±'
+let g:gitgutter_sign_removed                   = '-'
+let g:gitgutter_sign_removed_first_line        = '×'
+let g:gitgutter_sign_modified_removed          = '×'
 
