@@ -40,10 +40,12 @@ nnoremap <C-N> :bnext<CR>
 inoremap <C-N> <esc>:bnext<CR>
 nnoremap <C-P> :bprev<CR>
 inoremap <C-P> <esc>:bprev<CR>
-nnoremap <C-D> :bd<CR>
-inoremap <C-D> <esc>:bd<CR>
+nnoremap <C-D> :bp\|bd #<CR>
+inoremap <C-D> <esc>:bp\|bd #<CR>
 nnoremap <C-S> :w<CR>
 inoremap <C-S> <esc>:w<CR>
+nnoremap <C-Q> :q<CR>
+inoremap <C-Q> <esc>:q<CR>
 
 " Ctrl + C to xclip
 vnoremap <C-c> "+y
