@@ -7,9 +7,9 @@ export XDG_CONFIG_HOME=$ASWATHKK_DOTFILES
 export TERM=xterm-256color
 
 # Golang
-export PATH=$PATH:/usr/local/go/bin
-export PATH=$PATH:$HOME/go/bin
+export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
 ZSH_THEME="gnzh"
 
