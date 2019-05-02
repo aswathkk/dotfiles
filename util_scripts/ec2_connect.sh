@@ -1,5 +1,17 @@
 #!/bin/bash
 
+function get_public_ip {
+    PRIVATE_IP="$1"
+    PUBLIC_IP="$PRIVATE_IP"
+    if [[ "$PRIVATE_IP" =~ "^172" ]]; then
+        PUBLIC_IP=$(aws ec2 describe-instances \
+            --filters="Name=network-interface.addresses.private-ip-address,Values=$PRIVATE_IP" \
+            --query "Reservations[*].Instances[*].PublicIpAddress" \
+            | jq -r '.[0][0]')
+    fi
+    echo "$PUBLIC_IP"
+}
+
 function ec2_connect() {
     INPUT=$1
 
@@ -16,22 +28,14 @@ function ec2_connect() {
         IP=$(echo "$INPUT" | cut -d'@' -f2)
         USER=$(echo "$INPUT" | cut -d'@' -f1)
     fi
-
-    function get_public_ip {
-        PRIVATE_IP=$1
-        aws ec2 describe-instances \
-            --filters="Name=network-interface.addresses.private-ip-address,Values=$PRIVATE_IP" \
-            --query "Reservations[*].Instances[*].PublicIpAddress" \
-        | jq -r '.[0][0]'
-    }
-
+    
     PRIVATE_IP=$(grep -w "$IP" "$MACHINE_MAPPING_FILE" | cut -f2)
 
     if [[ -z "$PRIVATE_IP" ]]; then
-        PUBLIC_IP=$IP
-    else
-        PUBLIC_IP=$(get_public_ip "$PRIVATE_IP")
+        PRIVATE_IP=$IP
     fi
+
+    PUBLIC_IP=$(get_public_ip "$PRIVATE_IP")
 
     if [[ "$2" = "mosh" ]]; then
         mosh --ssh="ssh -i $KEY_FILE" "$USER"@"$PUBLIC_IP"
