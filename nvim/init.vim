@@ -15,6 +15,7 @@ Plug 'w0rp/ale'
 Plug 'Yggdroot/indentLine'
 Plug 'joshdick/onedark.vim'
 Plug 'sheerun/vim-polyglot'
+Plug 'szw/vim-tags'
 call plug#end()
 
 " general settings
@@ -75,4 +76,7 @@ let g:gitgutter_sign_modified                  = '±'
 let g:gitgutter_sign_removed                   = '-'
 let g:gitgutter_sign_removed_first_line        = '×'
 let g:gitgutter_sign_modified_removed          = '×'
+
+" vim-tags
+let g:vim_tags_auto_generate = 1
 
