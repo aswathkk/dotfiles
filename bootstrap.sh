@@ -61,4 +61,4 @@ install neovim
 # Install oh-my-zsh
 git clone https://github.com/robbyrussell/oh-my-zsh.git $ASWATHKK_DOTFILES/.oh-my-zsh
 
-echo "source $ASWATHKK_DOTFILES/sourceme.sh" >> .zshrc
+echo "source $ASWATHKK_DOTFILES/sourceme.sh" >> ~/.zshrc
