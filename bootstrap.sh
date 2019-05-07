@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # Globals
-ASWATHKK_DOTFILES=$(dirname "$0")
+SCRIPT=$(readlink -f $0)
+ASWATHKK_DOTFILES=$(dirname "$SCRIPT")
 
 # Detect OS
 # Currently, I'm only using MacOS, Ubuntu and CentOS
