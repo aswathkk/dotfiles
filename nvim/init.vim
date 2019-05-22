@@ -66,6 +66,10 @@ let g:airline_theme='onedark'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 
+" nerdtree
+let NERDTreeMinimalUI = 1
+let NERDTreeIgnore = ['\.pyc$', '__pycache__']
+
 " nerdcommenter
 let g:NERDSpaceDelims = 1
 
