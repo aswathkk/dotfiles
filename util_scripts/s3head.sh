@@ -27,5 +27,5 @@ function s3head() {
         echo "S3 file path is not specified"
         return
     fi
-    s3cmd get "$1" - | gzip -d - | head -n "$NUM_LINES"
+    s3cmd get "$1" - | zcat -f | head -n "$NUM_LINES"
 }
