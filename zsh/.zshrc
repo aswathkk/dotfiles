@@ -25,3 +25,9 @@ alias whatsmyip='curl http://ipinfo.io/ip'
 
 source <(cat $XDG_CONFIG_HOME/util_scripts/*)
 
+function refresh_config {
+    cd $XDG_CONFIG_HOME
+    git pull origin master
+    source sourceme.sh
+    cd -
+}
