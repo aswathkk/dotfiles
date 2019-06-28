@@ -22,7 +22,6 @@ source $ZSH/oh-my-zsh.sh
 
 alias tmux='tmux -u -f "$XDG_CONFIG_HOME"/tmux/.tmux.conf'
 alias whatsmyip='curl http://ipinfo.io/ip'
-alias s3ls='s3cmd ls --human-readable'
 
 source <(cat $XDG_CONFIG_HOME/util_scripts/*)
 

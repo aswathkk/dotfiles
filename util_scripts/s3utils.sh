@@ -29,3 +29,19 @@ function s3head() {
     fi
     s3cmd get "$1" - | zcat -f | head -n "$NUM_LINES"
 }
+
+function s3cat {
+    s3cmd get "$1" - | zcat -f
+}
+
+function s3less {
+    s3cmd get "$1" - | zcat -f | less
+}
+
+function s3size {
+    aws s3 ls --summarize --human-readable "$1" | grep "Total Size:"
+}
+
+alias s3ls='s3cmd ls --human-readable'
+alias s3get='s3cmd get'
+alias s3put='s3cmd put'
