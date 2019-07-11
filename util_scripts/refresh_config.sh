@@ -1,8 +1,8 @@
 #!/bin/bash
 
-function update_my_config() {
+function refresh_config {
     cd $XDG_CONFIG_HOME
     git pull origin master
+    source sourceme.sh
     cd -
-    source $XDG_CONFIG_HOME/sourceme.sh
 }

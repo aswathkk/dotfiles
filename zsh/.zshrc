@@ -24,10 +24,3 @@ alias tmux='tmux -u -f "$XDG_CONFIG_HOME"/tmux/.tmux.conf'
 alias whatsmyip='curl http://ipinfo.io/ip'
 
 source <(cat $XDG_CONFIG_HOME/util_scripts/*)
-
-function refresh_config {
-    cd $XDG_CONFIG_HOME
-    git pull origin master
-    source sourceme.sh
-    cd -
-}
