@@ -72,6 +72,8 @@ let NERDTreeIgnore = ['\.pyc$', '__pycache__']
 
 " nerdcommenter
 let g:NERDSpaceDelims = 1
+nnoremap <C-_> :call NERDComment('Toggle', 'Toggle')<CR>
+vnoremap <C-_> :call NERDComment('Toggle', 'Toggle')<CR>gv
 
 " gitgutter
 let g:gitgutter_override_sign_column_highlight = 0
