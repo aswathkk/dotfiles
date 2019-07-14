@@ -44,10 +44,10 @@ let g:onedark_hide_endofbuffer=0
 let mapleader=','
 
 nnoremap <Leader>nn : NERDTreeToggle<cr>
-nnoremap <C-N> :bnext<CR>
-inoremap <C-N> <esc>:bnext<CR>
-nnoremap <C-P> :bprev<CR>
-inoremap <C-P> <esc>:bprev<CR>
+nnoremap <C-L> :bnext<CR>
+inoremap <C-L> <esc>:bnext<CR>
+nnoremap <C-H> :bprev<CR>
+inoremap <C-H> <esc>:bprev<CR>
 nnoremap <C-D> :bp\|bd #<CR>
 inoremap <C-D> <esc>:bp\|bd #<CR>
 nnoremap <C-S> :w<CR>
