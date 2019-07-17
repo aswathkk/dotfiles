@@ -59,6 +59,8 @@ nnoremap <C-Q> :q<CR>
 inoremap <C-Q> <esc>:q<CR>
 vnoremap < <gv
 vnoremap > >gv
+nnoremap <C-A> ggVGG
+vnoremap <C-A> ggVGG
 
 " Ctrl + C to xclip
 vnoremap <C-c> "+y
