@@ -14,6 +14,9 @@ Plug 'vim-airline/vim-airline'
 Plug 'w0rp/ale'
 Plug 'Yggdroot/indentLine'
 Plug 'joshdick/onedark.vim'
+Plug 'ncm2/ncm2'
+Plug 'ncm2/ncm2-jedi'
+Plug 'roxma/nvim-yarp'
 Plug 'sheerun/vim-polyglot'
 Plug 'szw/vim-tags'
 call plug#end()
@@ -88,3 +91,8 @@ let g:gitgutter_sign_modified_removed          = '×'
 " vim-tags
 let g:vim_tags_auto_generate = 1
 
+" ncm2
+autocmd BufEnter * call ncm2#enable_for_buffer()
+set completeopt=noinsert,menuone,noselect
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
