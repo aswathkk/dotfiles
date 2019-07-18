@@ -39,7 +39,7 @@ function s3less {
 }
 
 function s3size {
-    aws s3 ls --summarize --human-readable "$1" | grep "Total Size:"
+    aws s3 ls --summarize --human-readable --recursive "$1" | grep "Total Size:"
 }
 
 alias s3ls='s3cmd ls --human-readable'
