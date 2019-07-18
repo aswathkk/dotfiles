@@ -19,6 +19,7 @@ Plug 'ncm2/ncm2-jedi'
 Plug 'roxma/nvim-yarp'
 Plug 'sheerun/vim-polyglot'
 Plug 'szw/vim-tags'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 call plug#end()
 
 " general settings
