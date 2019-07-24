@@ -55,6 +55,7 @@ inoremap <C-H> <esc>:bprev<CR>
 nnoremap <C-D> :bp\|bd #<CR>
 inoremap <C-D> <esc>:bp\|bd #<CR>
 nnoremap <C-S> :w<CR>
+vnoremap <C-S> <esc>:w<CR>
 inoremap <C-S> <esc>:w<CR>
 nnoremap <C-Q> :q<CR>
 inoremap <C-Q> <esc>:q<CR>
