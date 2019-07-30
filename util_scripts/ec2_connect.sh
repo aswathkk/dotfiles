@@ -43,3 +43,31 @@ function ec2_connect() {
         ssh -i "$KEY_FILE" "$USER"@"$PUBLIC_IP"
     fi
 }
+
+function ec2cp() {
+    FROM="$1"
+    MACHINE="$2"
+    TO="$3"
+
+    MACHINE_MAPPING_FILE="$XDG_CONFIG_HOME/private_configs/machine_list"
+    KEY_FILE=$(cat "$XDG_CONFIG_HOME/private_configs/key_file_location")
+
+    # Default user is centos
+    USER=centos
+    IP=$MACHINE
+
+    if [[ "$IP" =~ "@" ]]; then
+        IP=$(echo "$MACHINE" | cut -d'@' -f2)
+        USER=$(echo "$MACHINE" | cut -d'@' -f1)
+    fi
+
+    PRIVATE_IP=$(grep -w "$IP" "$MACHINE_MAPPING_FILE" | cut -f2)
+
+    if [[ -z "$PRIVATE_IP" ]]; then
+        PRIVATE_IP=$IP
+    fi
+
+    PUBLIC_IP=$(get_public_ip "$PRIVATE_IP")
+
+    scp -i "$KEY_FILE" "$FROM" "$USER@$PUBLIC_IP:$TO"
+}
