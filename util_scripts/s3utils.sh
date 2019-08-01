@@ -42,6 +42,12 @@ function s3size {
     aws s3 ls --summarize --human-readable --recursive "$1" | grep "Total Size:"
 }
 
+function s3gettag {
+    bucket=$(echo "$1" | cut -d '/' -f3)
+    key=${1:${#bucket}+6}
+    aws s3api get-object-tagging --bucket "$bucket" --key "$key"
+}
+
 alias s3ls='s3cmd ls --human-readable'
 alias s3get='s3cmd get'
 alias s3put='s3cmd put'
