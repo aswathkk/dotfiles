@@ -14,9 +14,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'w0rp/ale'
 Plug 'Yggdroot/indentLine'
 Plug 'joshdick/onedark.vim'
-Plug 'ncm2/ncm2'
-Plug 'ncm2/ncm2-jedi'
-Plug 'roxma/nvim-yarp'
+Plug 'neoclide/coc.nvim', {'tag': '*', 'branch': 'release'}
 Plug 'sheerun/vim-polyglot'
 Plug 'szw/vim-tags'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -96,8 +94,22 @@ let g:gitgutter_sign_modified_removed          = '×'
 " vim-tags
 let g:vim_tags_auto_generate = 1
 
-" ncm2
-autocmd BufEnter * call ncm2#enable_for_buffer()
-set completeopt=noinsert,menuone,noselect
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+" coc
+inoremap <silent><expr> <TAB>
+    \ pumvisible() ? "\<C-n>" :
+    \ <SID>check_back_space() ? "\<TAB>" :
+    \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+let g:coc_global_extensions = [
+    \ 'coc-json',
+    \ 'coc-tsserver',
+    \ 'coc-html',
+    \ 'coc-emmet',
+    \ 'coc-css'
+\ ]
