@@ -18,6 +18,7 @@ Plug 'neoclide/coc.nvim', {'tag': '*', 'branch': 'release'}
 Plug 'sheerun/vim-polyglot'
 Plug 'szw/vim-tags'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 call plug#end()
 
 " general settings
@@ -93,6 +94,9 @@ let g:gitgutter_sign_modified_removed          = '×'
 
 " vim-tags
 let g:vim_tags_auto_generate = 1
+
+" FZF
+nnoremap <C-p> :FZF<cr>
 
 " coc
 inoremap <silent><expr> <TAB>
