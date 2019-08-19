@@ -36,6 +36,7 @@ set cursorline
 set termguicolors
 set hidden
 syntax enable
+filetype plugin on
 
 " onedark colorscheme
 colorscheme onedark
