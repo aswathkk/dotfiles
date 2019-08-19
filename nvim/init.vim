@@ -76,7 +76,7 @@ let g:airline#extensions#tabline#enabled = 1
 
 " nerdtree
 let NERDTreeMinimalUI = 1
-let NERDTreeIgnore = ['\.pyc$', '__pycache__']
+let NERDTreeIgnore = ['\.pyc$', '__pycache__', '.git$']
 
 " nerdcommenter
 let g:NERDSpaceDelims = 1
