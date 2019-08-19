@@ -19,6 +19,8 @@ Plug 'sheerun/vim-polyglot'
 Plug 'szw/vim-tags'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 " general settings
@@ -98,6 +100,30 @@ let g:vim_tags_auto_generate = 1
 
 " FZF
 nnoremap <C-p> :FZF<cr>
+
+" vim-devicons
+let g:DevIconsEnableFoldersOpenClose = 1
+
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols = {}
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['html'] = ''
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['js'] = ''
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['json'] = ''
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['jsx'] = 'ﰆ'
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['md'] = ''
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['vim'] = ''
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['yaml'] = ''
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['yml'] = ''
+
+let g:WebDevIconsUnicodeDecorateFileNodesPatternSymbols = {}
+let g:WebDevIconsUnicodeDecorateFileNodesPatternSymbols['.*vimrc.*'] = ''
+let g:WebDevIconsUnicodeDecorateFileNodesPatternSymbols['.gitignore'] = ''
+let g:WebDevIconsUnicodeDecorateFileNodesPatternSymbols['package.json'] = ''
+let g:WebDevIconsUnicodeDecorateFileNodesPatternSymbols['package.lock.json'] = ''
+let g:WebDevIconsUnicodeDecorateFileNodesPatternSymbols['node_modules'] = ''
+let g:WebDevIconsUnicodeDecorateFileNodesPatternSymbols['webpack\.'] = 'ﰩ'
+
+let g:NERDTreeHighlightFolders = 1
+let g:NERDTreeHighlightFoldersFullName = 1
 
 " coc
 inoremap <silent><expr> <TAB>
