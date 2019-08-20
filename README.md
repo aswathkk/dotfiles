@@ -1,7 +1,7 @@
 # Dotfiles
 > My OSX / Linux configs
 
-![MacOS Screenshot](https://i.redd.it/ijgb7qwvahh31.png)
+![MacOS Screenshot](https://i.redd.it/fjof1800ghh31.png)
 
 - Terminal : [iTerm2](https://iterm2.com/) / Terminator
 - Editor : [NeoVim](https://neovim.io/)
