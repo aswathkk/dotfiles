@@ -11,8 +11,6 @@ export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
-ZSH_THEME="gnzh"
-
 plugins=(
     git
     docker
@@ -24,5 +22,8 @@ alias tmux='tmux -u -f "$XDG_CONFIG_HOME"/tmux/.tmux.conf'
 alias whatsmyip='curl http://ipinfo.io/ip'
 
 source <(cat $XDG_CONFIG_HOME/util_scripts/*)
+
+autoload -U promptinit; promptinit
+prompt pure
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

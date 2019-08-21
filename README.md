@@ -7,4 +7,5 @@
 - Editor : [NeoVim](https://neovim.io/)
 - Multiplexer : [tmux](https://github.com/tmux/tmux)
 - Shell : [zsh](http://www.zsh.org/)
+- Prompt : [Pure](https://github.com/sindresorhus/pure)
 - Font : [Sauce Code Nerd Font](https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/SourceCodePro)
