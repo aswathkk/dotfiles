@@ -39,6 +39,7 @@ set termguicolors
 set hidden
 syntax enable
 filetype plugin on
+set guicursor=n-v-c-sm:ver25-blinkon0,i-ci-ve:ver25,r-cr-o:hor20
 
 " onedark colorscheme
 let g:onedark_terminal_italics=1
