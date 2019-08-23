@@ -5,6 +5,7 @@ export GIT_EDITOR=nvim
 export MANPAGER="nvim -c MANPAGER -"
 export XDG_CONFIG_HOME=$ASWATHKK_DOTFILES
 export TERM=xterm-256color
+export LC_ALL=en_US.UTF-8
 
 # Golang
 export GOROOT=/usr/local/go
