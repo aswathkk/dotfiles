@@ -145,7 +145,8 @@ let g:coc_global_extensions = [
     \ 'coc-tsserver',
     \ 'coc-html',
     \ 'coc-emmet',
-    \ 'coc-css'
+    \ 'coc-css',
+    \ 'coc-python'
 \ ]
 
 " Remap keys for gotos
