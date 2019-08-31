@@ -51,10 +51,10 @@ colorscheme onedark
 let mapleader=','
 
 nnoremap <Leader>nn : NERDTreeToggle<cr>
-nnoremap <C-L> :bnext<CR>
-inoremap <C-L> <esc>:bnext<CR>
-nnoremap <C-H> :bprev<CR>
-inoremap <C-H> <esc>:bprev<CR>
+nnoremap <C-L> :call BNext()<CR>
+inoremap <C-L> <esc>:call BNext()<CR>
+nnoremap <C-H> :call BPrev()<CR>
+inoremap <C-H> <esc>:call BPrev()<CR>
 nnoremap <C-D> :bp\|bd #<CR>
 inoremap <C-D> <esc>:bp\|bd #<CR>
 nnoremap <C-S> :w<CR>
@@ -81,6 +81,7 @@ let g:airline#extensions#tabline#enabled = 1
 " nerdtree
 let NERDTreeMinimalUI = 1
 let NERDTreeIgnore = ['\.pyc$', '__pycache__', '.git$']
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " nerdcommenter
 let g:NERDSpaceDelims = 1
@@ -100,7 +101,7 @@ let g:gitgutter_sign_modified_removed          = '×'
 let g:vim_tags_auto_generate = 1
 
 " FZF
-nnoremap <C-p> :FZF<cr>
+nnoremap <silent> <C-p> :call FZFOpen(':FZF')<CR>
 
 " vim-devicons
 let g:DevIconsEnableFoldersOpenClose = 1
@@ -168,3 +169,25 @@ endfunction
 
 " Remap for rename current word
 nmap <leader>rn <Plug>(coc-rename)
+
+" Some function Hacks to avaoid issue I face with NERDTree
+function! BNext()
+    if (expand('%') =~ 'NERD_tree')
+        :exe "normal \<C-W>\<C-w>"
+    endif
+    :bn
+endfunction
+
+function! BPrev()
+    if (expand('%') =~ 'NERD_tree')
+        :exe "normal \<c-w>\<c-w>"
+    endif
+    :bp
+endfunction
+
+function! FZFOpen(command_str)
+  if (expand('%') =~# 'NERD_tree' && winnr('$') > 1)
+    exe "normal! \<c-w>\<c-w>"
+  endif
+  exe 'normal! ' . a:command_str . "\<cr>"
+endfunction
