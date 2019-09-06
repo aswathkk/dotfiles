@@ -1,6 +1,6 @@
 #!/bin/bash
 
-function s3head() {
+function shead() {
     NUM_LINES=10
     while test $# -gt 0; do
         case $1 in 
@@ -30,24 +30,24 @@ function s3head() {
     s3cmd get "$1" - | zcat -f | head -n "$NUM_LINES"
 }
 
-function s3cat {
+function scat {
     s3cmd get "$1" - | zcat -f
 }
 
-function s3less {
+function sless {
     s3cmd get "$1" - | zcat -f | less
 }
 
-function s3size {
+function ssize {
     aws s3 ls --summarize --human-readable --recursive "$1" | grep "Total Size:"
 }
 
-function s3gettag {
+function sgettag {
     bucket=$(echo "$1" | cut -d '/' -f3)
     key=${1:${#bucket}+6}
     aws s3api get-object-tagging --bucket "$bucket" --key "$key"
 }
 
-alias s3ls='s3cmd ls --human-readable'
-alias s3get='s3cmd get'
-alias s3put='s3cmd put'
+alias sls='s3cmd ls --human-readable'
+alias sget='s3cmd get'
+alias sput='s3cmd put'
