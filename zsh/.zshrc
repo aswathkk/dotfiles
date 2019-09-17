@@ -15,6 +15,7 @@ export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 plugins=(
     git
     docker
+    zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
