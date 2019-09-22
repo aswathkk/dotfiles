@@ -1,0 +1,20 @@
+{
+  "diagnostic.errorSign": "",
+  "diagnostic.infoSign": "כֿ",
+  "diagnostic.warningSign": "",
+  "diagnostic.hintSign": "",
+  "diagnostic.enableSign": true,
+  "suggest.completionItemKindLabels": {
+    "module": "\uf6a6 ",
+    "function": " ",
+    "variable": "\ufb18 "
+  },
+  "languageserver": {
+    "bash": {
+      "command": "bash-language-server",
+      "args": ["start"],
+      "filetypes": ["sh"],
+      "ignoredRootPaths": ["~"]
+    }
+  }
+}

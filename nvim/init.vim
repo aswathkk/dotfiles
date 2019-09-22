@@ -7,6 +7,7 @@ endif
 
 call plug#begin('~/.local/share/nvim/plugged')
 Plug 'airblade/vim-gitgutter'
+Plug 'aswathkk/darkscene.vim'
 Plug 'lambdalisue/vim-manpager'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
@@ -41,11 +42,8 @@ syntax enable
 filetype plugin on
 set guicursor=n-v-c-sm:ver25-blinkon0,i-ci-ve:ver25,r-cr-o:hor20
 
-" onedark colorscheme
-let g:onedark_terminal_italics=1
-let g:onedark_termcolors=256
-let g:onedark_hide_endofbuffer=1
-colorscheme onedark
+" darkscene
+colorscheme darkscene
 
 " mappings
 let mapleader=','
@@ -74,13 +72,20 @@ vnoremap <C-c> "+y
 let g:indentLine_char = '┊'
 
 " vim-airline
-let g:airline_theme='onedark'
+let g:airline_theme='darkscene'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#bufferline#enabled = 1
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
 
 " nerdtree
+let NERDTreeShowHidden = 1
 let NERDTreeMinimalUI = 1
 let NERDTreeIgnore = ['\.pyc$', '__pycache__', '.git$']
+let g:NERDTreeDirArrowExpandable = ' '
+let g:NERDTreeDirArrowCollapsible = ' '
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " nerdcommenter
@@ -91,17 +96,31 @@ vnoremap <C-_> :call NERDComment('Toggle', 'Toggle')<CR>gv
 
 " gitgutter
 let g:gitgutter_override_sign_column_highlight = 0
-let g:gitgutter_sign_added                     = '+'
-let g:gitgutter_sign_modified                  = '±'
-let g:gitgutter_sign_removed                   = '-'
-let g:gitgutter_sign_removed_first_line        = '×'
-let g:gitgutter_sign_modified_removed          = '×'
+let g:gitgutter_sign_added                     = '┃'
+let g:gitgutter_sign_modified                  = '┃'
+let g:gitgutter_sign_removed                   = '┃'
+let g:gitgutter_sign_removed_first_line        = '┃'
+let g:gitgutter_sign_modified_removed          = '┃'
 
 " vim-tags
 let g:vim_tags_auto_generate = 1
 
 " FZF
 nnoremap <silent> <C-p> :call FZFOpen(':FZF')<CR>
+let g:fzf_colors =
+\ { 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'Comment'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+':     ['fg', 'Statement'],
+  \ 'info':    ['fg', 'PreProc'],
+  \ 'border':  ['fg', 'Ignore'],
+  \ 'prompt':  ['fg', 'Conditional'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment'] }
 
 " vim-devicons
 let g:DevIconsEnableFoldersOpenClose = 1
