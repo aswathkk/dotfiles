@@ -8,13 +8,14 @@ endif
 call plug#begin('~/.local/share/nvim/plugged')
 Plug 'airblade/vim-gitgutter'
 Plug 'aswathkk/darkscene.vim'
+Plug 'editorconfig/editorconfig-vim'
 Plug 'lambdalisue/vim-manpager'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 Plug 'vim-airline/vim-airline'
 Plug 'w0rp/ale'
 Plug 'Yggdroot/indentLine'
-Plug 'joshdick/onedark.vim'
+Plug 'jiangmiao/auto-pairs'
 Plug 'neoclide/coc.nvim', {'tag': '*', 'branch': 'release'}
 Plug 'sheerun/vim-polyglot'
 Plug 'szw/vim-tags'
@@ -25,6 +26,7 @@ Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 " general settings
+set relativenumber
 set nobackup
 set nowritebackup
 set noswapfile
@@ -38,6 +40,7 @@ set nowrap
 set cursorline
 set termguicolors
 set hidden
+set noshowmode
 syntax enable
 filetype plugin on
 set guicursor=n-v-c-sm:ver25-blinkon0,i-ci-ve:ver25,r-cr-o:hor20
@@ -64,12 +67,15 @@ vnoremap < <gv
 vnoremap > >gv
 nnoremap <C-A> ggVGG
 vnoremap <C-A> ggVGG
+nnoremap <Leader><Space> :nohlsearch<CR>
 
 " Ctrl + C to xclip
 vnoremap <C-c> "+y
 
 " indentLine
+let g:indentLine_first_char = '┊'
 let g:indentLine_char = '┊'
+let g:indentLine_showFirstIndentLevel = 1
 
 " vim-airline
 let g:airline_theme='darkscene'
@@ -147,6 +153,9 @@ let g:NERDTreeHighlightFolders = 1
 let g:NERDTreeHighlightFoldersFullName = 1
 
 " coc
+set updatetime=300
+set signcolumn=yes
+
 inoremap <silent><expr> <TAB>
     \ pumvisible() ? "\<C-n>" :
     \ <SID>check_back_space() ? "\<TAB>" :
