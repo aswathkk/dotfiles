@@ -100,6 +100,10 @@ nnoremap <C-_> :call NERDComment('Toggle', 'Toggle')<CR>
 inoremap <C-_> <esc>:call NERDComment('Toggle', 'Toggle')<CR>
 vnoremap <C-_> :call NERDComment('Toggle', 'Toggle')<CR>gv
 
+" ALE
+let g:ale_sign_error = ''
+let g:ale_sign_warning = ''
+
 " gitgutter
 let g:gitgutter_override_sign_column_highlight = 0
 let g:gitgutter_sign_added                     = '┃'
