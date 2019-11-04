@@ -18,3 +18,6 @@ alias gd='git diff'
 alias ga='git add'
 alias gc='git commit'
 alias gl='git log'
+
+alias d='docker'
+alias k='kubectl'
