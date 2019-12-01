@@ -68,6 +68,7 @@ vnoremap > >gv
 nnoremap <C-A> ggVGG
 vnoremap <C-A> ggVGG
 nnoremap <Leader><Space> :nohlsearch<CR>
+nnoremap ,, :NERDTreeFind<CR>
 
 " Ctrl + C to xclip
 vnoremap <C-c> "+y
