@@ -20,4 +20,5 @@ alias gc='git commit'
 alias gl='git log'
 
 alias d='docker'
+alias dc='docker-compose'
 alias k='kubectl'
