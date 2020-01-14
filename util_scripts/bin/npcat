@@ -1,0 +1,7 @@
+#!/bin/python
+
+import sys
+from smart_open import smart_open
+import numpy as np
+
+print(np.load(smart_open(sys.argv[1], 'rb')))

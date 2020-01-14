@@ -26,3 +26,5 @@ autoload -U promptinit; promptinit
 prompt pure
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export PATH=$PATH:$XDG_CONFIG_HOME/util_scripts/bin
