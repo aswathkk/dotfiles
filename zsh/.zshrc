@@ -20,7 +20,7 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-source <(cat $XDG_CONFIG_HOME/util_scripts/*)
+source <(cat $XDG_CONFIG_HOME/util_scripts/*.sh)
 
 autoload -U promptinit; promptinit
 prompt pure
