@@ -179,6 +179,7 @@ let g:coc_global_extensions = [
     \ 'coc-tsserver',
     \ 'coc-html',
     \ 'coc-emmet',
+    \ 'coc-prettier',
     \ 'coc-css',
     \ 'coc-python'
 \ ]
@@ -224,3 +225,5 @@ function! FZFOpen(command_str)
   endif
   exe 'normal! ' . a:command_str . "\<cr>"
 endfunction
+
+command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')

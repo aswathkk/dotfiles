@@ -9,6 +9,7 @@
     "function": " ",
     "variable": "\ufb18 "
   },
+  "coc.preferences.formatOnSaveFiletypes": ["javascript", "css", "html"],
   "languageserver": {
     "bash": {
       "command": "bash-language-server",
