@@ -97,9 +97,9 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 
 " nerdcommenter
 let g:NERDSpaceDelims = 1
-nnoremap <C-_> :call NERDComment('Toggle', 'Toggle')<CR>
-inoremap <C-_> <esc>:call NERDComment('Toggle', 'Toggle')<CR>
-vnoremap <C-_> :call NERDComment('Toggle', 'Toggle')<CR>gv
+nnoremap <C-_> :call nerdcommenter#Comment('Toggle', 'Toggle')<CR>
+inoremap <C-_> <esc>:call nerdcommenter#Comment('Toggle', 'Toggle')<CR>
+vnoremap <C-_> :call nerdcommenter#Comment('Toggle', 'Toggle')<CR>gv
 
 " ALE
 let g:ale_sign_error = ''
