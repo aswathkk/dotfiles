@@ -28,6 +28,7 @@ alias gd='git diff'
 alias ga='git add'
 alias gc='git commit'
 alias gl='git log'
+alias gpull="git pull origin $(git rev-parse --abbrev-ref HEAD)"
 
 alias d='docker'
 alias dc='docker-compose'
