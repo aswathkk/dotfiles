@@ -1,11 +1,13 @@
-# Dotfiles
-> My OSX / Linux configs
+# My Dotfiles
 
-![MacOS Screenshot](https://i.redd.it/fjof1800ghh31.png)
+Dotfiles setup for MacOS
 
-- Terminal : [iTerm2](https://iterm2.com/) / Terminator
-- Editor : [NeoVim](https://neovim.io/)
-- Multiplexer : [tmux](https://github.com/tmux/tmux)
-- Shell : [zsh](http://www.zsh.org/)
-- Prompt : [Pure](https://github.com/sindresorhus/pure)
-- Font : [Sauce Code Nerd Font](https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/SourceCodePro)
+old configuration is available at `/old`
+
+## Installation
+
+Clone the repo and run `bash setup-mac.sh`
+
+## Apps
+
+Terminal: Kitty
