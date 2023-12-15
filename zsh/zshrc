@@ -16,18 +16,24 @@ source $ZSH/oh-my-zsh.sh
 DISABLE_AUTO_TITLE="true"
 
 # Pure prompt
-fpath+=($XDG_CONFIG_HOME/pure)
+fpath+=("$(brew --prefix)/share/zsh/site-functions")
 autoload -U promptinit; promptinit
 prompt pure
 
 # Nvm
-export NVM_DIR="$XDG_CONFIG_HOME/.nvm"
 [ -s "$(brew --prefix)/opt/nvm/nvm.sh" ] && \. "$(brew --prefix)/opt/nvm/nvm.sh"
 
+# FZF
+if [[ ! "$PATH" == *$(brew --prefix)/opt/fzf/bin* ]]; then
+  PATH="${PATH:+${PATH}:}$(brew --prefix)/opt/fzf/bin"
+fi
+source "$(brew --prefix)/opt/fzf/shell/completion.zsh"
+source "$(brew --prefix)/opt/fzf/shell/key-bindings.zsh"
+
 # Pyenv
-echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.zshrc
-echo 'command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.zshrc
-echo 'eval "$(pyenv init -)"' >> ~/.zshrc
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init --path)"
 
 # Android emulator looks for its config in $HOME, but I want it in $XDG_CONFIG_HOME
 alias emulator="HOME=$XDG_CONFIG_HOME emulator"
