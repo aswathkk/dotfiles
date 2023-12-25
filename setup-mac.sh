@@ -29,6 +29,7 @@ install_apps() {
   brew install --cask slack
   brew install --cask kitty
   brew install --cask karabiner-elements
+  brew install --cask obsidian
 
   brew install tmux
 }
